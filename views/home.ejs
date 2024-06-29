@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, <%= user.name || user.displayName || "User" %>!</h1>
+        
+        
+        
+  
+        <form action="/users/edit" method="POST">
+            <div class="form-group">
+               
+                <input type="text" class="form-control" id="name" name="name" value="<%= user.name || user.displayName %>">
+            </div>
+            <button type="submit" class="btn btn-dark">Update</button>
+        </form>
+
+        <a href="/users/logout" class="btn btn-dark my-2">Logout</a>
+    </div>
+</body>
+</html>
